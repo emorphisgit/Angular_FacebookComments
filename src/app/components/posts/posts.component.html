@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Posts</h2>
+    <div class="card">
+        <div class="text-right">
+            <h2>Number Of Post - {{totalPost}}</h2>
+        </div>
+        <div class="card-body p-2">
+            <app-list-item *ngFor="let listItem of showData; let i = index" [listItem]="listItem"></app-list-item>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row mb-4 cardCss" *ngFor="let item of viewCommentsDetail; let i = index">
+                    <div class="col-md-6">
+                        <p><b>Name:</b> {{item?.name}}</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p><b>Email:</b> {{item?.email}}</p>
+                    </div>
+
+                    <div class="text-center">
+                        {{item?.body}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal  -->
